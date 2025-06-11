@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useCalculatorStore } from '@/lib/store'
 import { solveMathProblem } from '@/lib/bedrock'
 import { fileToBase64, isValidImageFile } from '@/lib/utils'
-import { Upload, Image, Loader2, Trash2, Download, Eye, Camera } from 'lucide-react'
+import { Upload, Image, Loader2, Trash2, Download, Eye, Camera, Calculator } from 'lucide-react'
 
 interface ImagePreviewProps {
   imageUrl: string

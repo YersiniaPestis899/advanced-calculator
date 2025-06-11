@@ -1,5 +1,5 @@
 import { evaluate, parse, compile, derivative, simplify, rationalize } from 'mathjs'
-import Algebrite from 'algebrite'
+import * as Algebrite from 'algebrite'
 
 export interface CalculationResult {
   result: string
@@ -166,7 +166,7 @@ export class AdvancedCalculator {
       steps.push(`方程式: ${equation}`)
       
       // Algebriteを使用した方程式求解
-      const solutions = Algebrite.roots(equation, variable)
+      const solutions = Algebrite.solve(equation, variable)
       
       steps.push(`変数 ${variable} について解く`)
       steps.push(`解: ${variable} = ${solutions}`)
