@@ -4,7 +4,8 @@ import React, { Suspense, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { Button } from '@/components/ui/button'
 import { useCalculatorStore } from '@/lib/store'
-import { AdvancedCalculator } from '@/lib/calculator'
+import { AdvancedCalculator } from '@/lib/calculator'  
+import { evaluate } from 'mathjs'
 import { TrendingUp, ZoomIn, ZoomOut, RotateCw, Settings } from 'lucide-react'
 
 // 🔧 **Plotly.jsを動的にインポート（SSR対応）**
@@ -123,12 +124,8 @@ export default function GraphDisplay() {
         zValues[i] = []
         for (let j = 0; j < yValues.length; j++) {
           try {
-            // x, yを変数とした式の評価
-            const expression = currentExpression
-              .replace(/x/g, xValues[i].toString())
-              .replace(/y/g, yValues[j].toString())
-            
-            const z = eval(expression) // 注意: 本番環境ではより安全な評価方法を使用
+            // x, yを変数とした式の評価（mathjs使用）
+            const z = evaluate(currentExpression, { x: xValues[i], y: yValues[j] })
             zValues[i][j] = typeof z === 'number' && !isNaN(z) ? z : 0
           } catch {
             zValues[i][j] = 0
@@ -185,7 +182,7 @@ export default function GraphDisplay() {
   const plotConfig = {
     displayModeBar: true,
     displaylogo: false,
-    modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d'],
+    modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d'] as any,
     responsive: true
   }
 
