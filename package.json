@@ -1,0 +1,51 @@
+{
+  "name": "advanced-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:debug": "TAILWIND_MODE=watch next dev",
+    "build": "next build",
+    "build:debug": "TAILWIND_MODE=build next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tailwind:check": "npx tailwindcss -i ./src/app/globals.css -o ./public/tailwind-output.css --watch"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.826.0",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-tabs": "^1.1.12",
+    "@radix-ui/react-toast": "^1.2.14",
+    "@react-three/drei": "^10.1.2",
+    "@react-three/fiber": "^9.1.2",
+    "algebrite": "^1.4.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "file-type": "^21.0.0",
+    "lucide-react": "^0.514.0",
+    "mathjs": "^14.5.2",
+    "next": "^15.3.3",
+    "plotly.js": "^3.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.8",
+    "react-plotly.js": "^2.6.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.177.0",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.7",
+    "@types/react-dom": "^19.1.6",
+    "@types/three": "^0.177.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  }
+}
