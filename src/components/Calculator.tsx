@@ -216,8 +216,8 @@ export default function CalculatorComponent() {
           <CalculatorButton value="sin" onClick={() => handleInput('sin(')} variant="function" />
           <CalculatorButton value="cos" onClick={() => handleInput('cos(')} variant="function" />
           <CalculatorButton value="tan" onClick={() => handleInput('tan(')} variant="function" />
-          <CalculatorButton value="log" onClick={() => handleInput('log(')} variant="function" />
-          <CalculatorButton value="ln" onClick={() => handleInput('ln(')} variant="function" />
+          <CalculatorButton value="log" onClick={() => handleInput('log10(')} variant="function" />
+          <CalculatorButton value="ln" onClick={() => handleInput('log(')} variant="function" />
           <CalculatorButton value="√" onClick={() => handleInput('sqrt(')} variant="function" />
           <CalculatorButton value="π" onClick={() => handleInput('pi')} variant="function" />
           <CalculatorButton value="e" onClick={() => handleInput('e')} variant="function" />
